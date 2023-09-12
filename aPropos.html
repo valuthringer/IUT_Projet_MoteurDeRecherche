@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <!-- HEAD -->
+            <meta charset="utf-8">
+            <title>Viking Search</title>
+            <link href="style.css" rel="stylesheet" type="text/css">
+            <script src="code.js"></script>
+            <link rel="icon" href="./logos/Vikidia_recherche_2.png" type="image/png">
+        </head>
+    
+        <body>
+        <!-- BODY -->
+            <div class="info_projet">
+                <a href="index.html"><img src="./logos/Vikidia_recherche_2.png" alt="logo"></a>
+                <a href="index.html" id="title_site">Viking Search</a>
+                <a href="quiSommesNous.html"><p id="last">Qui sommes-nous ?</p></a>
+                <a href="aPropos.html"><p>A propos</p></a>
+            </div>
+
+        <div class="titres_pages">
+            <a href="#debut_apropos"><h1>A propos</h1></a>
+            <a href="#debut_apropos"><img src="logos/fleche_bas.png" alt="fleche_bas"></a>
+        </div>
+
+        <div class="lien">
+            <a href="#debut_apropos" id="debut_apropos"></a>
+        </div>
+
+        <div class="fond_apropos"><!--DEBUT DIV FOND A PROPOS-->
+        <div class="contenu">
+            <h2><strong>Principe de l'algorithme</strong></h2>
+            <ol>
+                <li>Indexation à froid des pages web
+                    <p>Collecte des données, récupération et analyse des pages web</p>
+                    <p>Découpage du texte en mots</p>
+                    <p>Lemmatistion</p>
+                    <p>Comptage nombre occurence de chaque lemme</p>
+                </li>
+
+                <li>Comparaison à chaud du contenu de la requête
+                    <p>Conversion requête en liste de mots</p>
+                    <p>Conversion de chaque mot en lemme</p>
+                    <p>Comptage nombre occurence de chaque lemme</p>
+                    <p>Comparaison requête à chacun des documents</p>
+                </li>
+            </ol>
+        </div>
+
+        <div class="contenu">
+            <h2><strong>Structures de données utilisées</strong></h2>
+            <ul>
+                <li>Indexation des pages à partir d'un index contenant les différentes pages</li>
+                <li>Lemmatisation : utilisation d'un dictionnaire de mots</li>
+                <li>BlackList : utilisation d'une liste noir</li>
+                <li>Association lemme - nombre occurence : HashMap</li>
+            </ul>
+        </div>
+
+        <div class="contenu">
+            <h2><strong>Statégies d'améliorations</strong></h2>
+            <ul>
+                <li>
+                    Utilisation de la méthode de sac de mots<br>
+                    Méthode rapide et simple à implémenter<br>
+                    Limite : Pas de prise en compte de l'agencement des mots lors de la comparaison
+                </li>
+                <li>
+                    Indexation à froid des pages webs<br>
+                    Limite : Pas rapide car pas faite en temps réel
+                </li>
+                <li>
+                    Utilisation d'un dictionnaire pour la Lemmatisation<br>
+                    Limite : Pas d'analyse grammaticale, pas de prise en compte des homonymes
+                </li>
+                <li>
+                    Utilisation de Files.readAllLines() pour lire un fichier<br>
+                    Limite : Pas efficace lorsqu'il s'agit de gros fichiers
+                </li>
+                <li>
+                    Choix de l'ordre de traitement des requêtes et des pages web pour améliorer la performance<br>
+                    Gestion des caractères non alphabétiques, Filtrage, Lemmatisation
+                </li>
+            </ul>
+        </div>
+        </div><!--FIN DIV FOND A PROPOS-->
+        <!--
+        <div class="espaceBas"> 
+        </div>
+        -->
+
+        <footer>
+            <!-- FOOTER -->
+            <div class="info_bas">
+                <a href="index.html"><img src="./logos/Vikidia_recherche_2.png" alt="logo">
+                <p id="title_bas">Viking Search - Le portail de recherche Vikidia</p></a>
+            </div>
+        </footer>
+    </body>
+</html>

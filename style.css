@@ -1,0 +1,431 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap'); /* police de caractère importée */
+/* PAGE HTML COMMUNE */
+html{
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-bottom: 0px;
+    margin-top: 0px;
+    font-family: 'Poppins', sans-serif;
+    animation: 100s infinite wallpapers;
+    width: 100%; 
+    height: 100%;
+    padding: 0;
+    /* Fond d'écran */
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    scroll-behavior: smooth;
+}
+body{
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-bottom: 0px;
+    margin-top: 0px;
+}
+
+/* ############################ */
+/* BANDEAU DU HAUT - GENERAL */
+.info_projet {
+    width: 100%;
+    height: 60px;
+    display: block;
+    background: rgba(0, 0, 0, 0.178);
+    box-shadow: 0px 0px 40px 2px rgba(0, 0, 0, 0.75);
+    backdrop-filter: blur(5px);
+    z-index: 1000;
+    position: sticky;
+    top: 0;
+}
+.info_projet:hover{
+    background-color: rgba(0, 0, 0, 0.377);
+    transition: background-color 1s;
+}
+.info_projet:not(:hover){
+    transition: background-color 1s;
+}
+.info_projet img{ /* Logo du bandeau du haut */
+    width: 45px;
+    height: 45px;
+    float: left;
+    margin-left: 10%;
+    margin-right: auto;
+    margin-top: 5px;
+}
+.info_projet #title_site{ /* titre Viking Search */
+    float: left;
+    color: white;
+    margin-left: 10px;
+    margin-top: 14px;
+    font-size: 20px;
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif;
+}
+.info_projet p{ /* texte menu */
+    float: right;
+    text-align: right;
+    color: white;
+    margin-right: 4%;
+    margin-top: 18px;
+    font-size: 15px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    text-shadow: 0px 0px 10px black;
+}
+.info_projet #last{
+    margin-right: 10%;
+}
+.info_projet p:hover{
+    color: white;
+    font-weight: bold;
+}
+.info_projet p:hover::before{
+    content: "> ";
+    position: absolute;
+    margin-left: -15px;
+}
+.info_projet p:active{
+    transform: scale(0.9);
+}
+
+/* ############################ */
+/* BANDEAU ÉPINGLÉ BAS D'ÉCRAN - GENERAL */
+.info_bas{
+    width: 100%;
+    height: 60px;
+    text-align: center;
+    display: inline-block;
+    background-color: rgba(0, 0, 0, 0.719);
+    backdrop-filter: blur(5px);
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
+    bottom:0;
+    left:0;
+    position: fixed;
+}
+.info_bas img{ /* Logo */
+    width: 45px;
+    height: 45px;
+    float: left;
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 5px;
+}
+.info_bas #title_bas{ /* Titre */
+    float: left;
+    color: white;
+    margin-left: 10px;
+    margin-top: 18px;
+    font-size: 15px;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* ############################ */
+/* ZONE DE RECHERCHE */
+.search_zone{ /* input texte */
+    text-align: center;
+    display: inline-block;
+    margin-top: 10%;
+    width: 100%;
+    animation: 0.5s welcome;
+}
+.search_zone img{ /* Logo centre page */
+    width: 190px;
+    height: 110px;
+    margin-bottom: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    filter: drop-shadow( 4px  4px 2px black) drop-shadow(0 0 20px white) ;
+    animation: 2s infinite logo_tourne;
+}
+
+.search_zone input, button{ /* Input + bouton */
+    width: 60%;
+    height: 30px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    padding: 0;
+    font-size: 16px;
+    font-family: 'Poppins', sans-serif;
+}
+.search_zone input{
+    padding: 10px;
+}
+#search_button{ /* Uniquement bouton */
+    margin-top: 10px;
+    border: solid white 1px;
+    border-radius: 6px;
+    display: inline-block;
+    height: auto;
+    width: auto;
+    padding: 10px 25px 10px 25px;
+    font-size: 13px;
+    background-color: #8d8d8da6;
+    color: white;
+    user-select: none;
+}
+#check_for_search{ /* Paramètres pour bouton check caché */
+    display: none;
+}
+.search_zone label{
+    padding: 10px 30px;
+    cursor: pointer;
+}
+#check_for_search:checked~.contenu_affiche{
+    display: block;
+}
+#search_button:hover{
+    background-color: #ccc;
+    cursor: pointer;
+    color: black;
+    transition: background-color 0.1s;
+}
+#search_button:not(:hover){
+    transition: background-color 0.1s;
+}
+#search_button:active{
+    background-color: #8d8d8da6;
+    color: white;
+    transform: scale(0.9);
+    backdrop-filter: blur(3px);
+    transition: transform 0.05s;
+}
+
+/* ############################ */
+/* Div blanche pour afficher résultats requête */
+.contenu_affiche{
+    width: 90%;
+    height: auto;
+    display: none;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10%;
+    margin-bottom: 50px;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.767);
+    backdrop-filter: blur(3px);
+    border-radius: 97% 3% 95% 5% / 5% 94% 6% 94%;
+    animation: 2s aff_contenu;
+}
+.contenu_affiche:hover{
+    border-radius: 91% 2% 91% 3% / 3% 94% 2% 94%  ;
+    transform: scale(1.04);
+    transition: border-radius 0.5s, transform 0.2s;
+}
+.contenu_affiche:not(:hover){
+    transition: border-radius 0.5s, transform 0.8s;
+}
+.contenu_affiche h1{
+    font-size: 25px;
+    padding-top: 15px;
+}
+
+
+/*__________________ */
+/* PAGES SECONDAIRES */
+.titres_pages{
+    height: 60vh;
+    padding-top: 30vh;
+    text-align: center;
+}
+.titres_pages a{
+    position: relative;
+    top:0;
+}
+.titres_pages img{
+    margin-top: 40px;
+    height: 40px; 
+    filter:invert(100%);
+}
+.titres_pages img:hover{
+    transform: scale(1.1);
+    transition: transform 0.2s;
+}
+.titres_pages h1{
+    /* Fond et forme*/
+    position: relative;
+    width: 20%;
+    margin: auto;
+    margin-bottom: 0px;
+    background: rgba(255, 255, 255, 0.250);
+    padding: 20px;
+    backdrop-filter: blur(5px);
+    border-radius: 15px;
+    /*Texte*/
+    font-size: 30px;
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif;
+    color: white;
+    text-align: center;
+    cursor: pointer;
+}
+.titres_pages h1:hover{
+    transform: scale(1.1);
+    background-color: rgba(255, 255, 255, 0.3);
+    transition: transform 0.5s, background-color 0.5s linear;
+}
+li{
+    /*Espacement entre les lignes*/
+    margin-bottom : 16px;
+}
+.contenu{
+    width:65%;
+    color: white;
+    padding: 10px;
+    text-align: left;
+    background: rgba(255, 255, 255, 0.363);
+    backdrop-filter: blur(5px);
+    border-radius: 15px;
+    border: solid 25px rgba(255, 255, 255, 0.178);
+    margin-top: 50px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/*Changement quand survol*/
+.contenu:hover {
+    transform : scale(1.08);
+    transform-style: preserve-3d;
+    transition : transform 0.5s, border 0.5s;
+}
+.contenu:not(:hover), .titres_pages h1:not(:hover){
+    transition: transform 0.5s;
+}
+
+/* Effet surlignage sous titre h2 */
+strong {
+    position: relative;
+}
+.contenu strong::before{
+    content: "";
+    position: absolute;
+    width: calc(100% + 4px);
+    height: 60%;
+    left: -2px;
+    bottom: 0;
+    z-index: -1;
+    transform: rotate(-2deg);
+}
+.contenu:hover strong::before {
+    background-color: #8b46b9;
+    animation: stabilo 0.7s;
+}
+/* FIN effet surlignage */
+
+.contenu:hover li{
+    list-style: none;
+}
+.contenu:hover li::before{
+    content: " ";
+    display: inline-block;
+    position: absolute;
+    height: 20px;
+    width: 20px;
+    background-image: url("logos/Vikidia_recherche_2.png");
+    background-position: left center;
+    padding-left: 10px;
+    background-size: 20px;
+    margin-left: -25px;
+    background-repeat: no-repeat;
+}
+
+.fond_apropos{
+    padding-top: 1px;
+    padding-bottom: 100px;
+    background-color: rgba(0, 0, 0, 0.459);
+    box-shadow: 05px 05px 120px 15px rgba(0, 0, 0, 0.808);
+}
+
+/* Enlève la décoration de texte sur les liens */
+a{
+    text-decoration: none;
+    color: white;
+}
+.contenu a:hover{
+    text-decoration: underline;
+}
+
+
+/* ############################ */
+/* Animations KEYFRAMES */
+@keyframes welcome { /* Apparission zone de recherche */
+    from {
+        transform: scale(0.1)
+
+    }
+    to {
+        transform: scale(1)
+    }
+  }
+
+@keyframes aff_contenu { /* Apparition zone de requete */
+    from {
+        margin-left: -100%;
+    }
+    to {
+        margin-left: 5%;
+    }
+}
+
+@keyframes logo_tourne { /* INFINI logo qui tourne */
+    0% {
+        transform: rotate(0deg);
+    }
+    25% {
+        transform: rotate(5deg);
+    }
+    50% {
+        transform: rotate(0deg);
+    }
+    75% {
+        transform: rotate(-2deg) scale(1.1);
+    }
+
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+@keyframes wallpapers{ /* Diapo wallpapepers background */
+    0% {
+        background-image: url("backgrounds/b1.jpg");
+    }
+    25% {
+        background-image: url("backgrounds/b2.jpg");
+    }
+    50% {
+        background-image: url("backgrounds/b4.jpg");
+    }
+    75% {
+        background-image: url("backgrounds/b3.jpg");
+    }
+    100% {
+        background-image: url("backgrounds/b1.jpg");
+    }
+}
+
+@keyframes stabilo{ /* reproduit un effet de stabilo */
+    0%{
+        text-align: left;
+        width: 0px;
+    }
+    100%{
+        text-align: left;
+        width: 100%;
+    }
+}
+
+/*
+@keyframes stabilo_out{
+    0%{
+        text-align: left;
+        width: 100%;
+    }
+    100%{
+        text-align: left;
+        width: 0%;
+    }
+
+}
+*/

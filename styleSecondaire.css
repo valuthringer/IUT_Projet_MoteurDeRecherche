@@ -1,0 +1,77 @@
+h1 {
+    /* Fond et forme*/
+    position: relative;
+    width: 20%;
+    margin: auto;
+    margin-top: 100px;
+    background: rgba(255, 255, 255, 0.250);
+    padding: 15px;
+    backdrop-filter: blur(5px);
+    border-radius: 15px;
+    /*Texte*/
+    font-size: 20px;
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif;
+    color: white;
+    text-align: center;
+}
+
+li {
+    /*Espacement entre les lignes*/
+    margin-bottom : 16px;
+}
+
+section {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    width:65%;
+    color: white;
+    padding: 30px;
+    text-align: left;
+    background: rgba(255, 255, 255, 0.178);
+    backdrop-filter: blur(5px);
+    border-radius: 15px;
+    border: solid 25px rgba(255, 255, 255, 0.178);
+    margin-top: 5%;
+    margin-left: auto;
+    margin-right: auto;
+}
+/*Changement quand survol*/
+section:hover {
+    border: solid 25px rgba(255, 255, 255, 0.397);
+}
+h1:hover,
+section:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform : scale(1.02);
+    transition : transform 0.5s;
+}
+section:not(:hover),
+h1:not(:hover){
+    transition: transform 0.5s;
+}
+
+
+section h2 {
+    /*Alignement titre au centre*/
+    text-align: center;
+    padding-right: 80%;
+}
+section  ul,
+section ol,
+section p {
+    margin-left: 30px;
+}
+
+
+
+
+
+
+.espaceBas {
+    padding-top: 110px;
+}
+
+
+
