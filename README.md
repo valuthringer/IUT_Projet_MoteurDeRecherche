@@ -1,8 +1,9 @@
-<h1>$\color{orange}Projet IUT : Étude de Faisabilité au sein de la ville de Nice$</h1>
+<h1>${\color{orange}Projet IUT}$ Moteur de recherche</h1>
+<h2>
+  
+[Ouvrir le site web ici !](https://valuthringer.github.io/IUT_Projet_MoteurDeRecherche)
+</h2>
+<h2>Site web réalisé dans le cadre d'un projet étudiant visant à concevoir un moteur de recherche</h2>
+<h2>⚠️ Seul le site web fonctionne car la partie serveur n'a pas été publiée ici en raison d'autorisations...</h2>
 
-[Ouvrir le site web en cliquant ici !](https://valuthringer.github.io/IUT_Projet_EtudeFaisabiliteNice)
-
-<h2>Site web réalisé dans le cadre d'un projet étudiant visant à prévoir dans un futur proche, une réduction des déplacements motorisés des habitants de la ville de Nice.</h2>
-
-<p>Projet réalisé durant 2 mois avec plusieurs étudiants, site réalisé personnellement.</p>
 
